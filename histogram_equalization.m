@@ -17,6 +17,19 @@ end
 figure;
 bar(pixelCountArray);
 
+
+
+pixelGammaRectifyImage=[];
+gamma=10;
+for x=1:col
+    for y=1:row
+        pixelGammaRectifyImage(y,x)=((double(greyImage(y,x))/255)^gamma)*255;
+    end
+end
+figure;
+imshow(pixelGammaRectifyImage);
+
+
 pixelPdfArray=[];
 pixelNum=row*col;
 for i=1:256
